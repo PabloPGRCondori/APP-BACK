@@ -1,12 +1,10 @@
-import { getAllUsers } from '../controllers/user.controller.js';
-import { verifyToken, isAdmin } from '../middlewares/authJwt.js';
-
 import express from 'express';
 import {
     allAccess,
     userBoard,
     adminBoard,
     moderatorBoard,
+    getAllUsers
 } from '../controllers/user.controller.js';
 
 import {
@@ -14,11 +12,10 @@ import {
     isAdmin,
     isModerator,
     isModeratorOrAdmin
-}from '../middlewares/authJwt.js';
-
-import { getAllUsers } from '../controllers/user.controller.js';
+} from '../middlewares/authJwt.js';
 
 const router = express.Router();
+
 router.get('/all', allAccess);
 router.get('/user', [verifyToken], userBoard);
 router.get('/mod', [verifyToken, isModerator], moderatorBoard);
