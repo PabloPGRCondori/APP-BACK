@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode
+.vscode/
+
+# React build output
+react-auth-app/build/
+react-auth-app/node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+
+# No subir el frontend
+react-auth-app/
